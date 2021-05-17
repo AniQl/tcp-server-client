@@ -1,5 +1,10 @@
 # tcp-server-client
+How to run?
+run server.py
+run client.py
+Observe STDOUT and created files.
 
+Task (it will be formatted later)
 BLK-5
 
 RCV-5
