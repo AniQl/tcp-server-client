@@ -20,7 +20,7 @@ try:
             print('received {!r}'.format(data))
 
             for word in words:
-                sock.sendall(bytes(f'{word}', 'UTF-8'))
+                sock.send(word)
 
             save_to_file(words, 'client_received_data.txt')
             sock.sendall(b'ETB')

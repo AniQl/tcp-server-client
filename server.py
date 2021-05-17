@@ -24,8 +24,8 @@ while True:
 
             if data[:3] == b'BLK':
                 number_of_words = data[4:]
-                # set buffer to 5 as words are 5bytes
-                buffer = 5
+                # set buffer to 4 as words are 4bytes
+                buffer = 4
                 connection.sendall(bytes(f'RCV-{int(number_of_words)}', 'UTF-8'))
 
             elif data == b'ETB':
@@ -43,7 +43,8 @@ while True:
 
             elif data:
                 try:
-                    words_received.append(int(data))
+                    words_received.append(data)
+
                 except ValueError as e:
                     print(f'ERROR: {e} for value: {data} ')
 
